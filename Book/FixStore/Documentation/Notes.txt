@@ -1,0 +1,5 @@
+﻿Source Code
+https://github.com/packtpublishing/building-restful-web-services-with-dotnet-core
+
+First  Scaffold DB Context  
+Scaffold-DbContext "Data Source=LAPTOP-60J88C7D\LOCALDB;Initial Catalog=FlixOneStore;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables Customers

@@ -1,7 +1,9 @@
+using FixStore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +28,9 @@ namespace FixStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMvc();
+            var connectiuonString = "Data Source=LAPTOP-60J88C7D\\LOCALDB;Initial Catalog=FlixOneStore;Integrated Security=True";
+            services.AddDbContext<FlixOneStoreContext>( option => option.UseSqlServer(connectiuonString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
